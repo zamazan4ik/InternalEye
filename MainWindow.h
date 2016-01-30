@@ -6,6 +6,7 @@
 class MainWindow : public QWidget
 {
     Q_OBJECT
+private:
 
 public:
     MainWindow(QWidget *parent = 0);
