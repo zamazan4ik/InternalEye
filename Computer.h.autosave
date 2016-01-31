@@ -288,6 +288,14 @@ private:
     private:
         QString kernelVersion;
         QDateTime dateOfBoot;
+        
+        void _update();
+        
+    public:
+        BootInfo();
+        
+        QString getKernelVersion() const;
+        QDateTime getDateOfBoot() const;
     };
 
     using PairOfStrings = QPair<QString, QString>;

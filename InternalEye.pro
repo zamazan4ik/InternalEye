@@ -23,9 +23,15 @@ SOURCES += main.cpp\
     OperatingSystem.cpp \
     Util.cpp \
     MemoryInfo.cpp \
-    DisplayInfo.cpp
+    DisplayInfo.cpp \
+    UptimeInfo.cpp \
+    LoadInfo.cpp \
+    Benchmarks.cpp \
+    Environment.cpp \
+    BootInfo.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \
     Computer.h \
-    Util.h
+    Util.h \
+    Benchmarks.h

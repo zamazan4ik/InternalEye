@@ -690,10 +690,30 @@
 //}
 
 
-
+#include <QProcess>
+#include <QByteArray>
+#include <QString>
+#include <QStringList>
+#include <QTextStream>
+#include <QDebug>
 #include "Computer.h"
 
-//Computer::Computer()
-//{
+Computer::Computer()
+{
+    _getEnvVariables();
+}
 
-//}
+void Computer::_getEnvVariables()
+{
+    QProcess proc;
+    proc.start("/bin/sh", QStringList() << "-c" << "printenv");
+    proc.waitForFinished(-1);
+    QByteArray output = proc.readAll();
+    QTextStream stream(&output);
+    QStringList list;
+    while(!stream.atEnd())
+    {
+        list = stream.readLine().split('=');
+        env.push_back({list.at(0), list.at(1)});
+    }
+}
