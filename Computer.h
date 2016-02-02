@@ -1,14 +1,6 @@
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
-#include <QString>
-#include <QVector>
-#include <QPair>
-#include <QHash>
-#include <QVariant>
-#include <QDateTime>
-#include <functional>
-
 
 /*
 
@@ -177,6 +169,19 @@ void scan_users_do(void);
 
 */
 
+
+#include <QString>
+#include <QVector>
+#include <QPair>
+#include <QHash>
+#include <QVariant>
+#include <QDate>
+#include <QTime>
+#include <QDateTime>
+#include <functional>
+#include "DateDifference.h"
+
+
 class Computer
 {
 private:
@@ -286,8 +291,31 @@ private:
     class BootInfo
     {
     private:
-        QString kernelVersion;
-        QDateTime dateOfBoot;
+        class Boot
+        {
+        private:
+            QString kernelVersion;
+            QDateTime   dateStart, dateEnd;
+            DateDifference duringTime;
+        public:
+            Boot();
+            Boot(const QString& kernelVersion_, const QDateTime& dateStart_,
+                 const QDateTime& dateEnd_);
+
+            QString getKernelVersion() const;
+            QDateTime getDateStart() const;
+            QDateTime getDateEnd() const;
+            DateDifference getDuringTime() const;
+        };
+
+        QVector<Boot> boots;
+
+        void _update();
+
+    public:
+        BootInfo();
+
+        QVector<Boot> getBoots() const;
     };
 
     using PairOfStrings = QPair<QString, QString>;
@@ -298,6 +326,7 @@ private:
     //MemoryInfo memory;
     //OperatingSystem os;
     LoadInfo load;
+    BootInfo boot;
     //DisplayInfo *display;
     //AlsaInfo *alsa;
 

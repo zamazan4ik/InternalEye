@@ -28,10 +28,17 @@ SOURCES += main.cpp\
     LoadInfo.cpp \
     Benchmarks.cpp \
     Environment.cpp \
-    BootInfo.cpp
+    BootInfo.cpp \
+    Boot.cpp \
+    DateDifference.cpp \
+    Network.cpp \
+    Devices.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \
     Computer.h \
     Util.h \
-    Benchmarks.h
+    Benchmarks.h \
+    DateDifference.h \
+    Network.h \
+    Devices.h

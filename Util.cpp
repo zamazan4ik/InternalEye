@@ -5,10 +5,10 @@
 #include "Util.h"
 
 
-QString getOutputConsole(const QString& arg)
+QByteArray getOutputConsole(const QString& arg)
 {
     QProcess process;
-    process.start("/bin/sh", QStringList() << "-c " << arg);
+    process.start("/bin/sh", QStringList() << "-c" << arg);
     process.waitForFinished();
     QByteArray array = process.readAll();
     if(array.isEmpty())
