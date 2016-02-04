@@ -32,7 +32,9 @@ SOURCES += main.cpp\
     Boot.cpp \
     DateDifference.cpp \
     Network.cpp \
-    Devices.cpp
+    Devices.cpp \
+    InputDevices.cpp \
+    Vendor.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \
@@ -41,4 +43,6 @@ HEADERS  += MainWindow.h \
     Benchmarks.h \
     DateDifference.h \
     Network.h \
-    Devices.h
+    Devices.h \
+    Vendor.h \
+    Constants.h

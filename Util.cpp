@@ -13,7 +13,7 @@ QByteArray getOutputConsole(const QString& arg)
     QByteArray array = process.readAll();
     if(array.isEmpty())
     {
-        return "Unknown";
+        return QByteArray();
     }
     return array;
 }
@@ -23,7 +23,7 @@ QString getLineOfString(const QString &str, int number)
     QStringList list = str.split('\n');
     if(number >= list.size())
     {
-        return "Error";
+        return QString();
     }
     return list[number];
 }
