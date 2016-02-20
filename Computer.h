@@ -318,6 +318,12 @@ private:
         QVector<Boot> getBoots() const;
     };
 
+    class FileSystem
+    {
+    private:
+
+    };
+
     using PairOfStrings = QPair<QString, QString>;
 
     QVector<PairOfStrings> env;

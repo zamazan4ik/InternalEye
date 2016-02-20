@@ -1,8 +1,8 @@
 #include <Vendor.h>
 
 
-Vendor::Vendor(const QString &id_, const QString &name_, const QString &url_)
-                : name(name_), id(id_), url(url_)
+Vendor::Vendor(const QString &name_, const QString &url_)
+                : name(name_), url(url_)
 {
 }
 

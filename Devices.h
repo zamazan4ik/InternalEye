@@ -2,6 +2,7 @@
 #define DEVICES_H
 
 #include <QString>
+#include <QVector>
 
 class Devices
 {
@@ -9,17 +10,31 @@ private:
     class Sensors
     {
     private:
-        class DriveSensors
+        class Sensor
         {
-
+        private:
+            QString name;
+            int temperature;
+            virtual void _update();
+        public:
+            QString getName() const;
+            int getTemp() const;
         };
-        class CPUSensors
-        {
 
+        class DriveSensor : public Sensor
+        {
+        private:
+            void _update();
         };
-        class VideoSensors
+        class CPUSensor : public Sensor
         {
-
+        private:
+            void _update();
+        };
+        class VideoSensor : public Sensor
+        {
+        private:
+            void _update();
         };
     };
     class Resources
@@ -31,8 +46,9 @@ private:
     private:
         class InputDevice
         {
+        public:
+            enum TypeOfInputDevice {KEYBOARD, MOUSE, JOYSTICK, PCSPKR, UNKNOWN};
         private:
-            enum TypeOfInputDevice {KEYBOARD, MOUSE, JOYSTICK, PCSPKR};
             TypeOfInputDevice type;
             QString name, connectedTo;
             int bus, vendor, product, version;
@@ -42,6 +58,8 @@ private:
                         const int product_, const int version_, const TypeOfInputDevice type_);
         };
         void _update();
+
+        QVector<InputDevice> devices;
     public:
 
     };

@@ -6,9 +6,9 @@
 class Vendor
 {
 private:
-    QString id, name, url;
+    QString name, url;
 public:
-    Vendor(const QString& id, const QString& name, const QString& url);
+    Vendor(const QString& name, const QString& url);
 
     //Getters
     QString getName() const;
