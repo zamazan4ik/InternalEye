@@ -1,80 +1,3 @@
-//QString& detectDesktopEnvironment()
-//{
-//    const QString tmp = g_getenv("GNOME_DESKTOP_SESSION_ID");
-//    FILE *version;
-//    char vers[16];
-
-//    if (tmp) {
-//    /* FIXME: this might not be true, as the gnome-panel in path
-//       may not be the one that's running.
-//       see where the user's running panel is and run *that* to
-//       obtain the version. */
-//    version = popen("gnome-about --gnome-version", "r");
-//    if (version) {
-//        (void)fscanf(version, _("Version: %s"), vers);
-//        if (pclose(version))
-//            goto unknown;
-//    } else {
-//        goto unknown;
-//    }
-
-//    os->desktop = g_strdup_printf("GNOME %s", vers);
-//    } else if (g_getenv("KDE_FULL_SESSION")) {
-
-//    if (g_getenv("KDE_SESSION_VERSION") && strstr(g_getenv("KDE_SESSION_VERSION"),(gchar *)"4")) {
-//        version = popen("kwin --version", "r");
-//    } else {
-//        version = popen("kcontrol --version", "r");
-//    }
-
-//    if (version) {
-//        char buf[32];
-
-//        (void)fgets(buf, 32, version);
-
-//        (void)fscanf(version, "KDE: %s", vers);
-//        if (pclose(version))
-//            goto unknown;
-//    } else {
-//        goto unknown;
-//    }
-
-//    os->desktop = g_strdup_printf("KDE %s", vers);
-//    } else {
-//      unknown:
-//        os->desktop = NULL;
-
-//    if (!g_getenv("DISPLAY")) {
-//        os->desktop = g_strdup(_("Terminal"));
-//    } else {
-//            GdkScreen *screen = gdk_screen_get_default();
-
-//            if (screen && GDK_IS_SCREEN(screen)) {
-//              const gchar *windowman;
-
-//              windowman = gdk_x11_screen_get_window_manager_name(screen);
-//              if (g_str_equal(windowman, "Xfwm4")) {
-//                  /* FIXME: check if xprop -root | grep XFCE_DESKTOP_WINDOW is defined */
-//                  os->desktop = g_strdup("XFCE 4");
-//              } else if ((tmp = g_getenv("XDG_CURRENT_DESKTOP"))) {
-//                  os->desktop = g_strdup(tmp);
-//                  if ((tmp = g_getenv("DESKTOP_SESSION")) && !g_str_equal(os->desktop, tmp)) {
-//                      g_free(os->desktop);
-//                      os->desktop = g_strdup(tmp);
-//                  }
-//              }
-
-//              if (!os->desktop) {
-//                  os->desktop = g_strdup_printf(_("Unknown (Window Manager: %s)"),
-//                                                windowman);
-//              }
-//            } else {
-//                  os->desktop = g_strdup(_("Unknown"));
-//            }
-//    }
-//    }
-//}
-
 //QString computerGetOS(void)
 //{
 //    struct utsname utsbuf;
@@ -251,6 +174,7 @@ Computer::OperatingSystem::OperatingSystem()
     libc = _getLibcVersion();
     language = _getLanguage();
     languages = _getLanguages();
+    desktop = _getDesktopEnv();
 
     //    os->username = g_strdup_printf("%s (%s)",
     //                                   g_get_user_name(), g_get_real_name());
@@ -415,9 +339,22 @@ QString Computer::OperatingSystem::_getLanguages()
     return result;
 }
 
+QString Computer::OperatingSystem::_getDesktopEnv()
+{
+    const QString FlagDE = "Desktop";
+    QString arr(getOutputConsole("inxi -S | grep Desktop"));
+    arr.chop(2);
+    int pos = arr.indexOf(FlagDE);
+    if(pos == -1)    return "Unknown";
+    QString ans = arr.mid(pos + FlagDE.length() + 2);
+    return ans;
+}
+
 QString Computer::OperatingSystem::getHomeDir() const
 {
     return homedir;
 }
+
+
 
 //QString Computer::OperatingSystem::get

@@ -198,6 +198,7 @@ private:
         QString _getLibcVersion();
         QString _getLanguage();
         QString _getLanguages();
+        QString _getDesktopEnv();
     public:
         OperatingSystem();
 
@@ -330,7 +331,7 @@ private:
 
     //UptimeInfo info;
     //MemoryInfo memory;
-    //OperatingSystem os;
+    OperatingSystem os;
     LoadInfo load;
     BootInfo boot;
     //DisplayInfo *display;
