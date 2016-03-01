@@ -169,7 +169,7 @@ void scan_users_do(void);
 
 */
 
-
+#include <QSize>
 #include <QString>
 #include <QVector>
 #include <QPair>
@@ -199,6 +199,7 @@ private:
         QString _getLanguage();
         QString _getLanguages();
         QString _getDesktopEnv();
+        QString _getDistro();
     public:
         OperatingSystem();
 
@@ -233,7 +234,11 @@ private:
         QString oglVendor, oglRenderer, oglVersion, displayName, vendor, version,
                 extensions, monitors;
         bool dri;
-        int width, height;
+        QSize size;
+
+    public:
+        QSize getSize() const;
+        bool DRI() const;
     };
     class UptimeInfo
     {

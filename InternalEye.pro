@@ -34,7 +34,10 @@ SOURCES += main.cpp\
     Network.cpp \
     Devices.cpp \
     InputDevices.cpp \
-    Vendor.cpp
+    Vendor.cpp \
+    MenuBar.cpp \
+    SystemTray.cpp \
+    Application.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \
@@ -45,4 +48,7 @@ HEADERS  += MainWindow.h \
     Network.h \
     Devices.h \
     Vendor.h \
-    Constants.h
+    Constants.h \
+    MenuBar.h \
+    SystemTray.h \
+    Application.h
