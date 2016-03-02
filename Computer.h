@@ -67,17 +67,22 @@ private:
 
     class DisplayInfo
     {
-        //TODO: Write a DisplayInfo class
+        //TODO: Write a _getX11info
     private:
         QString oglVendor, oglRenderer, oglVersion, displayName, vendor, version,
                 extensions, monitors;
         bool dri;
         QSize size;
 
+        void _getGLXinfo();
+        void _getX11info();
+        void _update();
+
     public:
+        DisplayInfo();
+
         QSize getSize() const;
         bool DRI() const;
-
         void update();
     };
 
