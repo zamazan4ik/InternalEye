@@ -1,115 +1,3 @@
-//QString computerGetOS(void)
-//{
-//    struct utsname utsbuf;
-//    OperatingSystem *os;
-//    int i;
-
-//    os = g_new0(OperatingSystem, 1);
-
-//    /* Attempt to get the Distribution name; try using /etc/lsb-release first,
-//       then doing the legacy method (checking for /etc/$DISTRO-release files) */
-//    if (g_file_test("/etc/lsb-release", G_FILE_TEST_EXISTS))
-//    {
-//        FILE *release;
-//        gchar buffer[128];
-
-//        release = popen("lsb_release -d", "r");
-//        if (release)
-//        {
-//            (void)fgets(buffer, 128, release);
-//            pclose(release);
-
-//            os->distro = buffer;
-//            os->distro = g_strdup(os->distro + strlen("Description:\t"));
-//        }
-//    }
-//    else if (g_file_test("/etc/arch-release", G_FILE_TEST_EXISTS))
-//    {
-//        os->distrocode = g_strdup("arch");
-//        os->distro = g_strdup("Arch Linux");
-//    }
-//    else
-//    {
-//        for (i = 0;; i++)
-//        {
-//            if (distro_db[i].file == NULL)
-//            {
-//                os->distrocode = g_strdup("unk");
-//                os->distro = g_strdup(_("Unknown distribution"));
-//                break;
-//            }
-
-//            if (g_file_test(distro_db[i].file, G_FILE_TEST_EXISTS))
-//            {
-//                FILE *distro_ver;
-//                char buf[128];
-
-//                distro_ver = fopen(distro_db[i].file, "r");
-//                if (distro_ver) {
-//                    (void)fgets(buf, 128, distro_ver);
-//                    fclose(distro_ver);
-//                }
-//                else
-//                {
-//                    continue;
-//                }
-
-//                buf[strlen(buf) - 1] = 0;
-
-//                if (!os->distro)
-//                {
-//                    /*
-//                     * HACK: Some Debian systems doesn't include
-//                     * the distribuition name in /etc/debian_release,
-//                     * so add them here.
-//                     */
-//                    if (!strncmp(distro_db[i].codename, "deb", 3) &&
-//                            ((buf[0] >= '0' && buf[0] <= '9') || buf[0] != 'D'))
-//                    {
-//                        os->distro = g_strdup_printf
-//                                ("Debian GNU/Linux %s", buf);
-//                    }
-//                    else
-//                    {
-//                        os->distro = g_strdup(buf);
-//                    }
-//                }
-
-//                if (g_str_equal(distro_db[i].codename, "ppy"))
-//                {
-//                    gchar *tmp;
-//                    tmp = g_strdup_printf("Puppy Linux");
-//                    g_free(os->distro);
-//                    os->distro = tmp;
-//                }
-//                os->distrocode = g_strdup(distro_db[i].codename);
-
-//                break;
-//            }
-//        }
-//    }
-
-//    os->distro = g_strstrip(os->distro);
-
-//    /* Kernel and hostname info */
-//    uname(&utsbuf);
-//    os->kernel_version = g_strdup(utsbuf.version);
-//    os->kernel = g_strdup_printf("%s %s (%s)", utsbuf.sysname,
-//                                 utsbuf.release, utsbuf.machine);
-//    os->hostname = g_strdup(utsbuf.nodename);
-//    os->language = g_strdup(g_getenv("LC_MESSAGES"));
-//    os->homedir = g_strdup(g_get_home_dir());
-//    os->username = g_strdup_printf("%s (%s)",
-//                                   g_get_user_name(), g_get_real_name());
-//    os->libc = get_libc_version();
-//    scan_languages(os);
-//    detect_desktop_environment(os);
-
-//    return os;
-//}
-
-//#include <string.h>
-//#include "hardinfo.h"
 #include <QString>
 #include <QFile>
 #include <QDir>
@@ -162,6 +50,11 @@ const QVector<DistroAndCode> Computer::OperatingSystem::distroDB =
 Computer::OperatingSystem::OperatingSystem()
 {
 //    QString  distrocode, username, boots;
+    _update();
+}
+
+void Computer::OperatingSystem::_update()
+{
     struct utsname sysInfo;
     uname(&sysInfo);
     kernelVersion = sysInfo.version;
@@ -175,7 +68,6 @@ Computer::OperatingSystem::OperatingSystem()
     languages = _getLanguages();
     desktop = _getDesktopEnv();
     distro = _getDistro();
-
 }
 
 QString Computer::OperatingSystem::_getDistro()

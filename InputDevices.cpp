@@ -19,10 +19,6 @@ DII::InputDevice(const QString &name_, const QString &connectedTo_, const int bu
 {
 }
 
-
-
-
-
 void DI::_update()
 {
     QByteArray arr = getOutputConsole("/proc/bus/input/devices");

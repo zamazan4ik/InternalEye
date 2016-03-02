@@ -4,12 +4,19 @@
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
-    pvbx = new QVBoxLayout(this);
-    pMenuBar = new MenuBar(this);
+    pvbx = new QVBoxLayout;
+    genButtons = new QHBoxLayout;
+    pMenuBar = new MenuBar;
 
+    refresh = new QPushButton(tr("Refresh"));
+
+    genButtons->addWidget(refresh);
     pvbx->addWidget(pMenuBar);
+    pvbx->addLayout(genButtons);
     setLayout(pvbx);
+
     setWindowTitle("Internal Eye");
+
     readSettings();
 }
 
@@ -22,7 +29,6 @@ void MainWindow::writeSettings() const
 {
     QSettings sett;
     sett.beginGroup("Settings");
-    qDebug() << geometry();
     sett.setValue("/geometry", geometry());
     sett.endGroup();
 }
@@ -31,7 +37,6 @@ void MainWindow::readSettings()
 {
     QSettings sett;
     sett.beginGroup("Settings");
-    qDebug() << sett.value("/geometry", QRect()).toRect();
     setGeometry(sett.value("/geometry", QRect()).toRect());
     sett.endGroup();
 }

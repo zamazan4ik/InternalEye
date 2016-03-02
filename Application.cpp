@@ -8,6 +8,8 @@ Application::Application()
     QCoreApplication::setOrganizationDomain("https://github.com/ZaMaZaN4iK/InternalEye");
     QCoreApplication::setOrganizationName("ZamSoft");
     window = new MainWindow;
+
+
     window->show();
 }
 

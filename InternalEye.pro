@@ -27,8 +27,6 @@ SOURCES += main.cpp\
     UptimeInfo.cpp \
     LoadInfo.cpp \
     Benchmarks.cpp \
-    Environment.cpp \
-    BootInfo.cpp \
     Boot.cpp \
     DateDifference.cpp \
     Network.cpp \
@@ -37,7 +35,11 @@ SOURCES += main.cpp\
     Vendor.cpp \
     MenuBar.cpp \
     SystemTray.cpp \
-    Application.cpp
+    Application.cpp \
+    Group.cpp \
+    User.cpp \
+    Module.cpp \
+    Filesystem.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \

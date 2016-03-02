@@ -12,7 +12,7 @@ private:
     QMenu* createFileMenu();
     QMenu* createHelpMenu();
 public:
-    MenuBar(QWidget* parent);
+    MenuBar(QWidget* parent = 0);
 };
 
 #endif // MENUBAR_H

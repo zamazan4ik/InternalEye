@@ -5,6 +5,7 @@
 
 class DateDifference
 {
+    //TODO : Rewrite this class
 private:
     static const int SecsInMin = 60, SecsInHour = 3600,
                      SecsInDay = 24 * SecsInHour, SecsInWeek = 7 * SecsInDay;

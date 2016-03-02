@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QPushButton>
 #include "MenuBar.h"
 #include "Application.h"
 
@@ -11,7 +13,10 @@ class MainWindow : public QWidget
     Q_OBJECT
 private:
     QVBoxLayout* pvbx;
+    QHBoxLayout* genButtons;
     MenuBar* pMenuBar;
+
+    QPushButton* refresh;
 
     void writeSettings() const;
     void readSettings();
