@@ -10,6 +10,7 @@
 #include <QDate>
 #include <QTime>
 #include <QDateTime>
+#include <QRegExp>
 #include <functional>
 #include "DateDifference.h"
 
@@ -67,7 +68,7 @@ private:
 
     class DisplayInfo
     {
-        //TODO: Write a _getX11info and constructors
+        //TODO: Add checking: count of monotors, resolutions
     private:
         QString oglVendor, oglRenderer, oglVersion, displayName, vendor, version,
                 monitors;
@@ -89,7 +90,7 @@ private:
 
     class UptimeInfo
     {
-        //TODO : Rewrite it with std::Chrono or QTime
+        //TODO : Rewrite it with std::chrono or QTime
     private:
         int compMonths, compWeeks, compDays, compHours, compMinutes, compSeconds,
             cpuMonths, cpuWeeks, cpuDays, cpuHours, cpuMinutes, cpuSeconds;
@@ -223,6 +224,41 @@ private:
         static QVector<Group> getGroups();
     };
 
+    class DevTools
+    {
+    private:
+        class Programs
+        {
+        private:
+            QString _name, _command;
+            QRegExp _regex;
+        public:
+            Programs(const QString& name, const QString& command, const QRegExp& regex);
+            QString name()      const;
+            QString command()   const;
+            QRegExp regex()     const;
+
+        };
+        static const QVector<Programs> Compilers, ScriptLang, Tools;
+
+        using PairsStr = QVector<QPair<QString, QString>>;
+        PairsStr compilers, tools, scripts;
+
+        PairsStr _getCompilers()    const;
+        PairsStr _getTools()        const;
+        PairsStr _getScripts()      const;
+        void _update();
+
+    public:
+        DevTools();
+        void update();
+
+        PairsStr getCompilers()  const;
+        PairsStr getTools()      const;
+        PairsStr getScripts()    const;
+    };
+
+
     using PairOfStrings = QPair<QString, QString>;
 
     UptimeInfo info;
@@ -230,6 +266,7 @@ private:
     OperatingSystem os;
     LoadInfo load;
     DisplayInfo display;
+    DevTools development;
 
     QVector<PairOfStrings> env;
     QVector<Boot> boots;

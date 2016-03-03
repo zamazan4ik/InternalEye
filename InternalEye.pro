@@ -40,7 +40,8 @@ SOURCES += main.cpp\
     User.cpp \
     Module.cpp \
     Filesystem.cpp \
-    Language.cpp
+    Language.cpp \
+    DevTools.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \
