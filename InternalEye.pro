@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     Group.cpp \
     User.cpp \
     Module.cpp \
-    Filesystem.cpp
+    Filesystem.cpp \
+    Language.cpp
 
 HEADERS  += MainWindow.h \
     cpu.h \

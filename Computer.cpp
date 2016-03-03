@@ -14,6 +14,7 @@ Computer::Computer()
     groups      = Group::getGroups();
     modules     = Module::getModules();
     filesystems = FileSystem::getFileSystems();
+    languages   = Language::getLanguages();
 }
 
 void Computer::_getEnvVariables()

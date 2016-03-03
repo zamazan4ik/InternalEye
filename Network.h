@@ -4,6 +4,8 @@
 
 class Network
 {
+private:
+
 public:
     Network();
 };

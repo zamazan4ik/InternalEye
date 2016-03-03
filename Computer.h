@@ -67,10 +67,11 @@ private:
 
     class DisplayInfo
     {
-        //TODO: Write a _getX11info
+        //TODO: Write a _getX11info and constructors
     private:
         QString oglVendor, oglRenderer, oglVersion, displayName, vendor, version,
-                extensions, monitors;
+                monitors;
+        QStringList extensions;
         bool dri;
         QSize size;
 
@@ -130,6 +131,19 @@ private:
         int getAllEnt() const;
         int getMostRunPID() const;
 
+    };
+
+    class Language
+    {
+    private:
+        QString _code, _name, _source, _address, _email, _language, _territory, _codeset, _revision, _date;
+    public:
+        Language();
+        Language(const QString& code, const QString& name, const QString& source, const QString& address,
+                 const QString& email, const QString& language, const QString& territory, const QString& codeset,
+                 const QString& revision, const QString& date);
+
+        static QVector<Language> getLanguages();
     };
 
     class Boot
@@ -223,6 +237,7 @@ private:
     QVector<Group> groups;
     QVector<Module> modules;
     QVector<FileSystem> filesystems;
+    QVector<Language> languages;
 
     void _getEnvVariables();
 public:
