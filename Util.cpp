@@ -13,7 +13,7 @@ QByteArray getOutputConsole(const QString& arg)
     QByteArray array = process.readAll();
     if(array.isEmpty())
     {
-        return QByteArray();
+        array = process.readAllStandardError();
     }
     return array;
 }

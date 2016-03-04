@@ -53,19 +53,6 @@ private:
 
     };
 
-    class MemoryInfo
-    {
-        //TODO : Add ENUM interface for MemoryInfo class
-    private:
-        QString TypeValue;
-        static const QVector<QString> nameProperties;
-        QHash<QString, QVariant> values;
-
-        void _update();
-    public:
-        MemoryInfo();
-    };
-
     class DisplayInfo
     {
         //TODO: Add checking: count of monotors, resolutions
@@ -227,28 +214,24 @@ private:
     class DevTools
     {
     private:
-        class Programs
+        class Program
         {
         private:
             QString _name, _command;
             QRegExp _regex;
         public:
-            Programs(const QString& name, const QString& command, const QRegExp& regex);
+            Program(const QString& name, const QString& command, const QRegExp& regex);
             QString name()      const;
             QString command()   const;
             QRegExp regex()     const;
 
         };
-        static const QVector<Programs> Compilers, ScriptLang, Tools;
+        static const QVector<Program> Compilers, ScriptLang, Tools;
 
         using PairsStr = QVector<QPair<QString, QString>>;
         PairsStr compilers, tools, scripts;
 
-        PairsStr _getCompilers()    const;
-        PairsStr _getTools()        const;
-        PairsStr _getScripts()      const;
-        void _update();
-
+        PairsStr _getVersion(const QVector<Program>& var);
     public:
         DevTools();
         void update();
@@ -262,7 +245,6 @@ private:
     using PairOfStrings = QPair<QString, QString>;
 
     UptimeInfo info;
-    MemoryInfo memory;
     OperatingSystem os;
     LoadInfo load;
     DisplayInfo display;

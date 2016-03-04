@@ -7,11 +7,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Computer.h"
+#include "Devices.h"
 
-#define CM Computer::MemoryInfo
+#define DM Devices::MemoryInfo
 
-const QVector<QString> CM::nameProperties =
+const QVector<QString> DM::nameProperties =
 {
     "MemTotal","MemFree","MemAvailable","Buffers","Cached","SwapCached","Active","Inactive",
     "Active(anon)","Inactive(anon)","Active(file)","Inactive(file)","Unevictable","Mlocked","SwapTotal",
@@ -21,14 +21,14 @@ const QVector<QString> CM::nameProperties =
     "HugePages_Total","HugePages_Free","HugePages_Rsvd","HugePages_Surp","Hugepagesize","DirectMap4k","DirectMap2M"
 };
 
-CM::MemoryInfo()
+DM::MemoryInfo()
 {
 //    int total, used, free, cached;
 //    double ratio;
     _update();
 }
 
-void Computer::MemoryInfo::_update()
+void DM::_update()
 {
     std::ifstream in("/proc/meminfo");
     if(in.is_open())

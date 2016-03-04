@@ -3,6 +3,7 @@
 
 #include "MainWindow.h"
 #include "Computer.h"
+#include "Devices.h"
 #include <QWidget>
 #include <QSettings>
 #include <QObject>
@@ -15,6 +16,7 @@ class Application : public QObject
 private:
     MainWindow* window;
     Computer computer;
+    Devices devices;
 public:
     Application();
     ~Application();

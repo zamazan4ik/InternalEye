@@ -5,6 +5,10 @@
 class Network
 {
 private:
+    class IPConnect
+    {
+
+    };
 
 public:
     Network();

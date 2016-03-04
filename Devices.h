@@ -3,6 +3,8 @@
 
 #include <QString>
 #include <QVector>
+#include <QHash>
+#include <QVariant>
 
 class Devices
 {
@@ -62,6 +64,19 @@ private:
         QVector<InputDevice> devices;
     public:
 
+    };
+
+    class MemoryInfo
+    {
+        //TODO : Add ENUM interface for MemoryInfo class
+    private:
+        QString TypeValue;
+        static const QVector<QString> nameProperties;
+        QHash<QString, QVariant> values;
+
+        void _update();
+    public:
+        MemoryInfo();
     };
 public:
     Devices();
