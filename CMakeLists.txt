@@ -72,5 +72,4 @@ add_executable(${PROJECT_NAME}
     ${HEADERS}
 )
 
-
 qt5_use_modules(${PROJECT_NAME} Widgets Core Gui)
