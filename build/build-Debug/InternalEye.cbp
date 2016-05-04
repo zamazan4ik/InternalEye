@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="InternalEye" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\home\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="InternalEye">
+         <Option output="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug/InternalEye" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/./mkspecs/linux-g++" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtCore" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtGui" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtWidgets" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/gui" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 InternalEye" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="InternalEye/fast">
+         <Option output="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug/InternalEye" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DQT_WIDGETS_LIB" />
+            <Add option="-DQT_GUI_LIB" />
+            <Add option="-DQT_CORE_LIB" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/./mkspecs/linux-g++" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtCore" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtGui" />
+            <Add directory="/home/zamazan4ik/Qt/5.6/gcc_64/include/QtWidgets" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers" />
+            <Add directory="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/gui" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/5" />
+            <Add directory="/usr/include/c++/5/backward" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 InternalEye/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="InternalEye_automoc">
+         <Option working_dir="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Debug" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 InternalEye_automoc" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/zamazan4ik/For_Linux/Projects/C++/Qt\ Creator/InternalEye/build/build-Debug/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Application.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Benchmarks.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Computer.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Constants.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/DateDifference.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Devices.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Network.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Util.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/Vendor.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/cpu.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/gui/MainWindow.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/headers/gui/MenuBar.h">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/Application.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/DateDifference.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/Util.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/Vendor.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/cpu.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/gui/MainWindow.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/gui/MenuBar.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/main.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/benchmark/Benchmarks.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/Boot.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/Computer.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/DevTools.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/DisplayInfo.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/Filesystem.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/Group.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/Language.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/LoadInfo.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/MemoryInfo.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/OperatingSystem.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/UptimeInfo.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/computer/User.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/devices/Devices.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/devices/InputDevices.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/devices/Module.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/src/modules/network/Network.cpp">
+         <Option target="InternalEye"/>
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Widgets\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QGtk2ThemePlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJp2Plugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QDDSPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Gui\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+      <Unit filename="/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/../../../../../../../home/zamazan4ik/Qt/5.6/gcc_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\zamazan4ik\Qt\5.6\gcc_64\lib\cmake\Qt5Core\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

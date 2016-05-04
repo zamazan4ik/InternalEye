@@ -1,0 +1,4 @@
+/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Release/CMakeFiles/edit_cache.dir
+/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Release/CMakeFiles/rebuild_cache.dir
+/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Release/CMakeFiles/InternalEye.dir
+/media/zamazan4ik/For_Linux/Projects/C++/Qt Creator/InternalEye/build/build-Release/CMakeFiles/InternalEye_automoc.dir
