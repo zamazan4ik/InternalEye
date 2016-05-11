@@ -1,3 +1,24 @@
+/***************************************************************************
+ *   Copyright (C) 2016 by Zaitsev Alexander                               *
+ *   zamazan4ik@tut.by	                                                   *
+ *                                                                         *
+ *   This file is part of InternalEye.                                     *
+ *                                                                         *
+ *   InternalEye is free software: you can redistribute it and/or modify   *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   InternalEye is distributed in the hope that it will be useful,        *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with InternalEye.  If not, see <http://www.gnu.org/licenses/>.  *
+ ***************************************************************************/
+ 
+ 
 #ifndef COMPUTER_H
 #define COMPUTER_H
 
@@ -55,7 +76,7 @@ private:
 
     class DisplayInfo
     {
-        //TODO: Add checking: count of monotors, resolutions
+        //TODO: Add checking: count of monitors, resolutions
     private:
         QString oglVendor, oglRenderer, oglVersion, displayName, vendor, version,
                 monitors;
@@ -110,7 +131,7 @@ private:
     public:
         LoadInfo();
 
-        //Getters
+
         double getLoad1() const;
         double getLoad5() const;
         double getLoad15() const;
@@ -244,11 +265,11 @@ private:
 
     using PairOfStrings = QPair<QString, QString>;
 
-    //UptimeInfo info;
-    //OperatingSystem os;
-    //LoadInfo load;
-    //DisplayInfo display;
-    //DevTools development;
+    UptimeInfo info;
+    OperatingSystem os;
+    LoadInfo load;
+    DisplayInfo display;
+    DevTools development;
 
     QVector<PairOfStrings> env;
     QVector<Boot> boots;
