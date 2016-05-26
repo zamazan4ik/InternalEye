@@ -27,6 +27,7 @@ set(HEADERS
     headers/Benchmarks.h
     headers/Util.h
     headers/cpu.h
+    headers/ParseCommandLine.h
 
     headers/gui/MenuBar.h
     headers/gui/MainWindow.h
@@ -39,6 +40,7 @@ set(SOURCES
     src/main.cpp
     src/Util.cpp
     src/Vendor.cpp
+    src/ParseCommandLine.cpp
 
     src/gui/MainWindow.cpp
     src/gui/MenuBar.cpp

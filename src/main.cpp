@@ -25,10 +25,12 @@
 #include <QByteArray>
 #include "Computer.h"
 #include "Application.h"
+#include "ParseCommandLine.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    if(!parseLine(argc, argv))  exit(0);
     Application app;
     return a.exec();
 }
