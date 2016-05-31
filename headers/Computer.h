@@ -33,13 +33,14 @@
 #include <QDateTime>
 #include <QRegExp>
 #include <functional>
+#include "AbstractModule.h"
 #include "DateDifference.h"
 
 
 class Computer
 {
 private:
-    class OperatingSystem
+    class OperatingSystem : public AbstractModule
     {
         //TODO:Add username
     private:
@@ -55,8 +56,6 @@ private:
         QString _getLanguages();
         QString _getDesktopEnv();
         QString _getDistro();
-
-        void _update();
     public:
         OperatingSystem();
 
@@ -72,9 +71,10 @@ private:
         QString getBoots() const;
         QString getLibc() const;
 
+        virtual void update();
     };
 
-    class DisplayInfo
+    class DisplayInfo : public AbstractModule
     {
         //TODO: Add checking: count of monitors, resolutions
     private:
@@ -93,10 +93,10 @@ private:
 
         QSize getSize() const;
         bool DRI() const;
-        void update();
+        virtual void update();
     };
 
-    class UptimeInfo
+    class UptimeInfo : public AbstractModule
     {
         //TODO : Rewrite it with std::chrono or QTime
     private:
@@ -120,9 +120,10 @@ private:
         int getCpuSeconds() const;
 
         UptimeInfo();
+        virtual void update();
     };
 
-    class LoadInfo
+    class LoadInfo : public AbstractModule
     {
     private:
         double load1, load5, load15;
@@ -130,7 +131,6 @@ private:
         void _update();
     public:
         LoadInfo();
-
 
         double getLoad1() const;
         double getLoad5() const;
@@ -140,101 +140,129 @@ private:
         int getAllEnt() const;
         int getMostRunPID() const;
 
+        virtual void update();
     };
 
-    class Language
+    class Languages : public AbstractModule
     {
     private:
-        QString _code, _name, _source, _address, _email, _language, _territory, _codeset, _revision, _date;
+        struct Language
+        {
+            QString _code, _name, _source, _address, _email, _language, _territory, _codeset, _revision, _date;
+        };
+        QVector<Language> languages;
+
+        QVector<Language> _getLanguages();
     public:
-        Language();
-        Language(const QString& code, const QString& name, const QString& source, const QString& address,
-                 const QString& email, const QString& language, const QString& territory, const QString& codeset,
-                 const QString& revision, const QString& date);
+        Languages();
 
-        static QVector<Language> getLanguages();
+        virtual void update();
+
+        QVector<Language> getLanguages();
     };
 
-    class Boot
+    class Boots : public AbstractModule
     {
     private:
-        QString _kernelVersion;
-        QDateTime   _dateStart, _dateEnd;
-        DateDifference _duringTime;
+        struct Boot
+        {
+            QString _kernelVersion;
+            QDateTime   _dateStart, _dateEnd;
+            DateDifference _duringTime;
+        };
+        QVector<Boot> boots;
+
+        QVector<Boot> _getBoots();
     public:
-        Boot();
-        Boot(const QString& kernelVersion, const QDateTime& dateStart,
-             const QDateTime& dateEnd);
+        Boots();
 
-        QString getKernelVersion() const;
-        QDateTime getDateStart() const;
-        QDateTime getDateEnd() const;
-        DateDifference getDuringTime() const;
+        virtual void update();
 
-        static QVector<Boot> getBoots();
+        QVector<Boot> getBoots();
     };
 
 
-    class FileSystem
+    class FileSystems : public AbstractModule
     {
     private:
-        QString _filesystem, _device, _mountPoint;
-        QStringList _mountFlags;
-        double _size, _used, _available;
+        struct FileSystem
+        {
+            QString _filesystem, _device, _mountPoint;
+            QStringList _mountFlags;
+            double _size, _used, _available;
+        };
+        QVector<FileSystem> filesystems;
+
+        QVector<FileSystem> _getFileSystems();
     public:
-        FileSystem();
-        FileSystem(const QString& filesystem, const QString& device, const QString& mountPoint,
-              const QStringList& mountFlags, const double size, const double used, const double available);
+        virtual void update();
 
-        static QVector<FileSystem> getFileSystems();
+        QVector<FileSystem> getFileSystems();
     };
 
-    class Module
+    class Modules : public AbstractModule
     {
     private:
-        QString _name, _description, _license, _versionMagic, _path;
-        QStringList _usedBy, _author, _depends;
-        double _size;
+        struct Module
+        {
+            QString _name, _description, _license, _versionMagic, _path;
+            QStringList _usedBy, _author, _depends;
+            double _size;
+        };
+        QVector<Module> modules;
+
+        QVector<Module> _getModules();
     public:
-        Module();
-        Module(const QString& name, const QStringList& author, const QString& description, const QString& license,
-               const QStringList& depends, const QString& versionMagic, const QString& path, const QStringList& usedBy,
-               const double size);
+        Modules();
 
-        static QVector<Module> getModules();
+        virtual void update();
+
+        QVector<Module> getModules();
     };
 
-    class User
+    class Users : public AbstractModule
     {
     private:
-        QString _name, _firstName, _secondName, _address, _workPhone, _homePhone,
+        struct User
+        {
+            QString _name, _firstName, _secondName, _address, _workPhone, _homePhone,
                 _workDir, _shell;
-        int _id, _groupID;
-    public:
-        User();
-        User(const QString& name, const QString& firstName, const QString& secondName,
-             const QString& address, const QString& workPhone, const QString& homePhone,
-             const QString& workDir, const QString& shell, const int id, const int groupID);
+            int _id, _groupID;
+        };
+        QVector<User> users;
 
-        static QVector<User> getUsers();
+        QVector<User> _getUsers();
+    public:
+        Users();
+
+        virtual void update();
+
+        QVector<User> getUsers();
     };
 
-    class Group
+    class Groups : public AbstractModule
     {
     private:
-        QString _name;
-        int _id;
-        QStringList _members;
-    public:
-        Group();
-        Group(const QString& name, const int id, const QStringList& members);
+        struct Group
+        {
+            QString name;
+            int id;
+            QStringList members;
+        };
+        QVector<Group> groups;
 
-        static QVector<Group> getGroups();
+        QVector<Group> _getGroups();
+    public:
+        Groups();
+        virtual void update();
+
+        QVector<Group> getGroups();
     };
 
-    class DevTools
+    class DevTools : public AbstractModule
     {
     private:
+        //TODO : Add info about installed libraries(version) like Boost, Qt, Cuda, etc.
         class Program
         {
         private:
@@ -255,33 +283,34 @@ private:
         PairsStr _getVersion(const QVector<Program>& var);
     public:
         DevTools();
-        void update();
+        virtual void update();
 
         PairsStr getCompilers()  const;
         PairsStr getTools()      const;
         PairsStr getScripts()    const;
     };
+    class EnvVariables : public AbstractModule
+    {
+    private:
+        struct EnvVariable
+        {
+            QString name, value;
+        };
+        QVector<EnvVariable> variables;
 
+        QVector<EnvVariable> _getEnvVariables();
+    public:
+        EnvVariables();
 
-    using PairOfStrings = QPair<QString, QString>;
+        virtual void update();
 
-    UptimeInfo info;
-    OperatingSystem os;
-    LoadInfo load;
-    DisplayInfo display;
-    DevTools development;
+        QVector<EnvVariable> getEnvVariables();
+    };
 
-    QVector<PairOfStrings> env;
-    QVector<Boot> boots;
-    QVector<User> users;
-    QVector<Group> groups;
-    QVector<Module> modules;
-    QVector<FileSystem> filesystems;
-    QVector<Language> languages;
-
-    void _getEnvVariables();
+    QVector<AbstractModule*> modules;
 public:
     Computer();
+    ~Computer();
 };
 
 #endif // COMPUTER_H

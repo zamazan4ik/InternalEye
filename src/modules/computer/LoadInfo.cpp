@@ -61,6 +61,11 @@ int CL::getMostRunPID() const
     return mostRunPID;
 }
 
+void CL::update()
+{
+    _update();
+}
+
 void CL::_update()
 {
     std::ifstream in("/proc/loadavg");

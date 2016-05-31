@@ -19,21 +19,28 @@
  ***************************************************************************/
  
  
-#include "Application.h"
-#include <QApplication>
+#ifndef APPLICATION_H
+#define APPLICATION_H
+
+#include "MainWindow.h"
+#include "Computer.h"
+#include "Devices.h"
 #include <QWidget>
+#include <QSettings>
+#include <QObject>
 
-Application::Application()
+class MainWindow;
+
+class Shell : public QObject
 {
-    QCoreApplication::setApplicationName("InternalEye");
-    QCoreApplication::setOrganizationDomain("https://github.com/ZaMaZaN4iK/InternalEye");
-    QCoreApplication::setOrganizationName("ZamSoft");
-    window = new MainWindow;
+    Q_OBJECT
+private:
+    MainWindow* window;
+    Computer* computer;
+    Devices* devices;
+public:
+    Shell();
+    ~Shell();
+};
 
-    window->show();
-}
-
-Application::~Application()
-{
-    delete window;
-}
+#endif // APPLICATION_H

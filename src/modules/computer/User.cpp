@@ -23,20 +23,12 @@
 #include "Util.h"
 #include <QTextStream>
 
-Computer::User::User()
+Computer::Users::Users()
 {
+    update();
 }
 
-Computer::User::User(const QString& name, const QString& firstName, const QString& secondName,
-               const QString& address, const QString& workPhone, const QString& homePhone,
-               const QString& workDir, const QString& shell, const int id, const int groupID) :
-               _name(name), _firstName(firstName), _secondName(secondName), _address(address),
-               _workPhone(workPhone), _homePhone(homePhone), _workDir(workDir), _shell(shell),
-               _id(id), _groupID(groupID)
-{
-}
-
-QVector<Computer::User> Computer::User::getUsers()
+QVector<Computer::Users::User> Computer::Users::_getUsers()
 {
     QByteArray out = getOutputConsole("cat /etc/passwd");
     QTextStream stream(&out);
@@ -58,8 +50,18 @@ QVector<Computer::User> Computer::User::getUsers()
         workPhone   = size >= 4 ? addInfo[3] : "";
         homePhone   = size >= 5 ? addInfo[4] : "";
 
-        users.push_back(User(name, firstName, secondName, address, workPhone,
-                             homePhone, workDir, shell, id, groupID));
+        users.push_back({name, firstName, secondName, address, workPhone,
+                             homePhone, workDir, shell, id, groupID});
     }
+    return users;
+}
+
+void Computer::Users::update()
+{
+    users = _getUsers();
+}
+
+QVector<Computer::Users::User> Computer::Users::getUsers()
+{
     return users;
 }

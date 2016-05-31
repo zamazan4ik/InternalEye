@@ -95,7 +95,10 @@ int CU::getCpuMonths() const
     return cpuMonths;
 }
 
-
+void CU::update()
+{
+    _update();
+}
 
 void CU::_update()
 {

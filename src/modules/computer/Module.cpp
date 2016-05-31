@@ -23,18 +23,22 @@
 #include "Util.h"
 #include <QTextStream>
 
-Computer::Module::Module()
+Computer::Modules::Modules()
 {
+    update();
 }
 
-Computer::Module::Module(const QString& name, const QStringList& author, const QString& description, const QString& license,
-                         const QStringList& depends, const QString& versionMagic, const QString& path, const QStringList& usedBy,
-                         const double size) : _name(name), _author(author), _description(description), _license(license),
-                         _depends(depends), _versionMagic(versionMagic), _path(path), _usedBy(usedBy), _size(size)
+void Computer::Modules::update()
 {
+    modules = _getModules();
 }
 
-QVector<Computer::Module> Computer::Module::getModules()
+QVector<Computer::Modules::Module> Computer::Modules::getModules()
+{
+    return modules;
+}
+
+QVector<Computer::Modules::Module> Computer::Modules::_getModules()
 {
     QByteArray out = getOutputConsole("lsmod");
     QTextStream stream(&out);
@@ -64,8 +68,8 @@ QVector<Computer::Module> Computer::Module::getModules()
             else if(first == "vermagic")    versionMagic = second;
             else if(first == "filename")    path = second;
         }
-        modules.push_back(Module(name, author, description, license, depends,
-                                 versionMagic, path, usedBy, size));
+        modules.push_back({name, description, license, versionMagic, path,
+                           usedBy, author, depends, size});
     }
     return modules;
 }

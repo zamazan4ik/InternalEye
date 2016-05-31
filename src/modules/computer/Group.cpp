@@ -23,18 +23,21 @@
 #include "Computer.h"
 #include "Util.h"
 
-#define CG Computer::Group
+#define CG Computer::Groups
 
-CG::Group()
+//using CG = Computer::Groups;
+
+Computer::Groups::Groups()
 {
+    update();
 }
 
-CG::Group(const QString& name, const int id, const QStringList& members) :
-          _name(name), _id(id), _members(members)
+QVector<Computer::Groups::Group> CG::getGroups()
 {
+    return groups;
 }
 
-QVector<Computer::Group> CG::getGroups()
+QVector<Computer::Groups::Group> CG::_getGroups()
 {
     QByteArray out = getOutputConsole("cat /etc/group");
     QTextStream stream(&out);
@@ -46,7 +49,12 @@ QVector<Computer::Group> CG::getGroups()
         QString     name    = line[0];
         int         id      = line[2].toInt();
         QStringList members = line[3].split(',');
-        groups.push_back(Group(name, id, members));
+        groups.push_back({name, id, members});
     }
     return groups;
+}
+
+void CG::update()
+{
+    groups = _getGroups();
 }

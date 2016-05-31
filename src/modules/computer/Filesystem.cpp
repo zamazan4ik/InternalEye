@@ -24,18 +24,19 @@
 #include <QTextStream>
 #include <sys/vfs.h>
 
-Computer::FileSystem::FileSystem()
+#define CF Computer::FileSystems;
+
+void Computer::FileSystems::update()
 {
+    filesystems = _getFileSystems();
 }
 
-Computer::FileSystem::FileSystem(const QString& filesystem, const QString& device, const QString& mountPoint,
-                                 const QStringList& mountFlags, const double size, const double used, const double available) :
-                                 _filesystem(filesystem), _device(device), _mountPoint(mountPoint), _mountFlags(mountFlags),
-                                 _size(size), _used(used), _available(available)
+QVector<Computer::FileSystems::FileSystem> Computer::FileSystems::getFileSystems()
 {
+    return filesystems;
 }
 
-QVector<Computer::FileSystem> Computer::FileSystem::getFileSystems()
+QVector<Computer::FileSystems::FileSystem> Computer::FileSystems::_getFileSystems()
 {
     QByteArray out = getOutputConsole("cat /etc/mtab");
     QTextStream stream(&out);
@@ -54,8 +55,7 @@ QVector<Computer::FileSystem> Computer::FileSystem::getFileSystems()
             available = static_cast<double>(sfs.f_bsize * sfs.f_bavail);
             used = size - available;
         }
-        filesystems.push_back(FileSystem(filesystem, device, mountPoint, mountFlags, size, used, available));
+        filesystems.push_back({filesystem, device, mountPoint, mountFlags, size, used, available});
     }
     return filesystems;
 }
-

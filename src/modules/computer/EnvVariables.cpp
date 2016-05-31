@@ -17,30 +17,36 @@
  *   You should have received a copy of the GNU General Public License     *
  *   along with InternalEye.  If not, see <http://www.gnu.org/licenses/>.  *
  ***************************************************************************/
- 
- 
-#ifndef APPLICATION_H
-#define APPLICATION_H
 
-#include "MainWindow.h"
 #include "Computer.h"
-#include "Devices.h"
-#include <QWidget>
-#include <QSettings>
-#include <QObject>
+#include <QTextStream>
+#include "Util.h"
 
-class MainWindow;
-
-class Application : public QObject
+Computer::EnvVariables::EnvVariables()
 {
-    Q_OBJECT
-private:
-    MainWindow* window;
-    Computer computer;
-    Devices devices;
-public:
-    Application();
-    ~Application();
-};
 
-#endif // APPLICATION_H
+}
+
+void Computer::EnvVariables::update()
+{
+    variables = _getEnvVariables();
+}
+
+QVector<Computer::EnvVariables::EnvVariable> Computer::EnvVariables::getEnvVariables()
+{
+    return variables;
+}
+
+QVector<Computer::EnvVariables::EnvVariable> Computer::EnvVariables::_getEnvVariables()
+{
+    QByteArray output = getOutputConsole("printenv");
+    QTextStream stream(&output);
+    QStringList list;
+    QVector<EnvVariable> env;
+    while(!stream.atEnd())
+    {
+        list = stream.readLine().split('=');
+        env.push_back({list[0], list[1]});
+    }
+    return env;
+}

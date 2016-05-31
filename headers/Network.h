@@ -24,7 +24,7 @@
 
 #include "AbstractModule.h"
 
-class Network : public AbstractModule
+class Network
 {
 private:
     class IPConnect

@@ -70,9 +70,9 @@ const QVector<CD::Program> CD::ScriptLang = {
     {"Python 2","python --version",     QRegExp("(\\d+\\.\\d+\\.\\d+)")},
     {"Python 3","python3 --version",    QRegExp("(\\d+\\.\\d+\\.\\d+)")},
     {"Perl",    "perl --version",       QRegExp("(\\d+\\.\\d+\\.\\d+)")},
-    {"PHP",     "php --version",  	QRegExp("(\\d+\\.\\d+\\.\\S+)")},
-    {"Ruby",    "ruby --version", 	QRegExp("(\\d+\\.\\d+\\.\\d+)")},
-    {"Bash",    "bash --version", 	QRegExp("(\\d+\\.\\d+\\.\\S+)")}
+    {"PHP",     "php --version",        QRegExp("(\\d+\\.\\d+\\.\\S+)")},
+    {"Ruby",    "ruby --version",       QRegExp("(\\d+\\.\\d+\\.\\d+)")},
+    {"Bash",    "bash --version",       QRegExp("(\\d+\\.\\d+\\.\\S+)")}
 };
 
 CD::DevTools()

@@ -24,7 +24,7 @@
 
 #include "AbstractModule.h"
 
-class Benchmarks : public AbstractModule
+class Benchmarks
 {
 public:
     Benchmarks();

@@ -67,14 +67,14 @@ const QVector<DistroAndCode> Computer::OperatingSystem::distroDB =
 };
 
 
-
 Computer::OperatingSystem::OperatingSystem()
 {
 //    QString  distrocode, username, boots;
-    _update();
+    update();
 }
 
-void Computer::OperatingSystem::_update()
+
+void Computer::OperatingSystem::update()
 {
     struct utsname sysInfo;
     uname(&sysInfo);

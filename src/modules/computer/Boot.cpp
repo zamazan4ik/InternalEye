@@ -32,45 +32,21 @@
 #include "Util.h"
 #include "Computer.h"
 
-#define CBB Computer::Boot
+#define CBB Computer::Boots
 
-CBB::Boot()
+CBB::Boots()
 {
+    update();
 }
 
-CBB::Boot(const QString &kernelVersion, const QDateTime &dateStart, const QDateTime &dateEnd) :
-          _kernelVersion(kernelVersion), _dateStart(dateStart), _dateEnd(dateEnd), _duringTime(dateStart, dateEnd)
-{
-}
-
-QString CBB::getKernelVersion() const
-{
-    return _kernelVersion;
-}
-
-QDateTime CBB::getDateStart() const
-{
-    return _dateStart;
-}
-
-QDateTime CBB::getDateEnd() const
-{
-    return _dateEnd;
-}
-
-DateDifference CBB::getDuringTime() const
-{
-    return _duringTime;
-}
-
-QVector<Computer::Boot> CBB::getBoots()
+QVector<Computer::Boots::Boot> CBB::_getBoots()
 {
     //TODO : Write a _update for Boot
     QByteArray output = getOutputConsole("last -F | grep 'system boot'");
     QTextStream stream(&output);
     QStringList list;
     QString line;
-    QVector<Computer::Boot> boots;
+    QVector<Computer::Boots::Boot> boots;
     while(!stream.atEnd())
     {
         line = stream.readLine();
@@ -87,8 +63,12 @@ QVector<Computer::Boot> CBB::getBoots()
                                    arg(list.at(7)).arg(list.at(8)), "ddd MMM d hh:mm:ss yyyy");
         dateEnd = loc.toDateTime(QString("%1 %2 %3 %4 %5").arg(list.at(9)).arg(list.at(10)).arg(list.at(11)).
                                  arg(list.at(12)).arg(list.at(13)), "ddd MMM d hh:mm:ss yyyy");
-        Boot (kernelVersion, dateStart, dateEnd);
-        boots.push_back(Boot (kernelVersion, dateStart, dateEnd));
+        boots.push_back({kernelVersion, dateStart, dateEnd});
     }
     return boots;
+}
+
+void CBB::update()
+{
+    boots = _getBoots();
 }

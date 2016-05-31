@@ -29,23 +29,22 @@
 
 Computer::Computer()
 {
-    _getEnvVariables();
-    boots       = Boot::getBoots();
-    users       = User::getUsers();
-    groups      = Group::getGroups();
-    modules     = Module::getModules();
-    filesystems = FileSystem::getFileSystems();
-    languages   = Language::getLanguages();
+    modules.push_back(new OperatingSystem);
+    modules.push_back(new Modules);
+    modules.push_back(new Boots);
+    modules.push_back(new Languages);
+    modules.push_back(new FileSystems);
+    modules.push_back(new DisplayInfo);
+    modules.push_back(new EnvVariables);
+    modules.push_back(new DevTools);
+    modules.push_back(new Groups);
+    modules.push_back(new Users);
 }
 
-void Computer::_getEnvVariables()
+Computer::~Computer()
 {
-    QByteArray output = getOutputConsole("printenv");
-    QTextStream stream(&output);
-    QStringList list;
-    while(!stream.atEnd())
+    for(AbstractModule* x : modules)
     {
-        list = stream.readLine().split('=');
-        env.push_back({list[0], list[1]});
+        delete x;
     }
 }

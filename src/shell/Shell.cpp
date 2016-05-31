@@ -19,18 +19,23 @@
  ***************************************************************************/
  
  
-#include <QApplication>
-#include <QProcess>
-#include <QDebug>
-#include <QByteArray>
-#include "Computer.h"
 #include "Shell.h"
-#include "ParseCommandLine.h"
+#include <QApplication>
+#include <QWidget>
 
-int main(int argc, char *argv[])
+Shell::Shell()
 {
-    QApplication a(argc, argv);
-    if(!parseLine(argc, argv))  exit(0);
-    Shell app;
-    return a.exec();
+    QCoreApplication::setApplicationName("InternalEye");
+    QCoreApplication::setOrganizationDomain("https://github.com/ZaMaZaN4iK/InternalEye");
+
+    window = new MainWindow;
+    window->show();
+
+    computer = new Computer;
+    devices = new Devices;
+}
+
+Shell::~Shell()
+{
+    delete window;
 }

@@ -27,7 +27,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include "MenuBar.h"
-#include "Application.h"
+#include "Shell.h"
 
 class MainWindow : public QWidget
 {

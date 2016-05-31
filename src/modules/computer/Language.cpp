@@ -23,19 +23,17 @@
 #include "Util.h"
 #include <QTextStream>
 
-Computer::Language::Language()
+Computer::Languages::Languages()
 {
+    update();
 }
 
-Computer::Language::Language(const QString& code, const QString& name, const QString& source, const QString& address,
-                             const QString& email, const QString& language, const QString& territory, const QString& codeset,
-                             const QString& revision, const QString& date) : _code(code), _name(name), _source(source), _address(address),
-                             _email(email), _language(language), _territory(territory), _codeset(codeset), _revision(revision),
-                             _date(date)
+void Computer::Languages::update()
 {
+    languages = _getLanguages();
 }
 
-QVector<Computer::Language> Computer::Language::getLanguages()
+QVector<Computer::Languages::Language> Computer::Languages::_getLanguages()
 {
     QByteArray out = getOutputConsole("locale -va");
     QTextStream stream(&out);
@@ -67,8 +65,14 @@ QVector<Computer::Language> Computer::Language::getLanguages()
             }
             line = stream.readLine().trimmed();
         }
-        languages.push_back(Language(code, name, source, address, email, language, territory,
-                                     codeset, revision, date));
+        languages.push_back({code, name, source, address, email, language, territory,
+                                     codeset, revision, date});
     }
+    return languages;
+}
+
+
+QVector<Computer::Languages::Language> Computer::Languages::getLanguages()
+{
     return languages;
 }

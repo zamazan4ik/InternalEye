@@ -18,7 +18,7 @@ include_directories(
 
 set(HEADERS
     headers/Computer.h
-    headers/Application.h
+    headers/Shell.h
     headers/Network.h
     headers/Devices.h
     headers/DateDifference.h
@@ -35,13 +35,14 @@ set(HEADERS
 )
 
 set(SOURCES
-    src/Application.cpp
     src/cpu.cpp
     src/DateDifference.cpp
     src/main.cpp
     src/Util.cpp
     src/Vendor.cpp
     src/ParseCommandLine.cpp
+
+    src/shell/Shell.cpp
 
     src/gui/MainWindow.cpp
     src/gui/MenuBar.cpp
@@ -62,10 +63,11 @@ set(SOURCES
     src/modules/computer/OperatingSystem.cpp
     src/modules/computer/UptimeInfo.cpp
     src/modules/computer/User.cpp
+    src/modules/computer/EnvVariables.cpp
+    src/modules/computer/Module.cpp
 
     src/modules/devices/Devices.cpp
     src/modules/devices/InputDevices.cpp
-    src/modules/devices/Module.cpp
 
     src/modules/network/Network.cpp
 )

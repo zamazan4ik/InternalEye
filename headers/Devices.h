@@ -26,6 +26,7 @@
 #include <QVector>
 #include <QHash>
 #include <QVariant>
+#include "AbstractModule.h"
 
 class Devices
 {

@@ -62,6 +62,6 @@ QMenu* MenuBar::createHelpMenu()
 void MenuBar::slotAboutProgram()
 {
     QMessageBox::about(this, tr("About program"), tr("Author : Zaitsev Alexander\nTranslator : Zaitsev Alexander\n"
-                                                     "Graphic designer : Romanovskiy Roman"));
+                                                     "Icon designer : Romanovskiy Roman"));
 }
 
