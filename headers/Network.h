@@ -22,8 +22,9 @@
 #ifndef NETWORK_H
 #define NETWORK_H
 
+#include "AbstractModule.h"
 
-class Network
+class Network : public AbstractModule
 {
 private:
     class IPConnect

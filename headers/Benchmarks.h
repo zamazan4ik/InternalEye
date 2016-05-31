@@ -22,8 +22,9 @@
 #ifndef BENCHMARKS_H
 #define BENCHMARKS_H
 
+#include "AbstractModule.h"
 
-class Benchmarks
+class Benchmarks : public AbstractModule
 {
 public:
     Benchmarks();

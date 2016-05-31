@@ -30,7 +30,7 @@
 Computer::Computer()
 {
     _getEnvVariables();
-    boots       = Boot::getBoots();//TODO : Crash here
+    boots       = Boot::getBoots();
     users       = User::getUsers();
     groups      = Group::getGroups();
     modules     = Module::getModules();
